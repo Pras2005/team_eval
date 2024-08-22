@@ -1,0 +1,245 @@
+/* General Navbar Styles */
+.navbar {
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    border-bottom: 2px solid #007bff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.5s ease;
+}
+
+.navbar:hover {
+    background-color: #ffffff;
+}
+
+/* Navbar Brand */
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: #007bff;
+    transition: color 0.3s ease;
+}
+
+.navbar-brand img {
+    margin-right: 10px;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.2));
+}
+
+.navbar-brand:hover {
+    color: #0056b3;
+}
+
+/* General Navbar Link Styles */
+.navbar-nav .nav-link {
+    font-size: 1.1rem;
+    color: #333;
+    padding: 8px 16px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover Effects */
+.navbar-nav .nav-link:hover {
+
+    color: #333;
+}
+
+/* Active Link Styles */
+.navbar-nav .nav-item.active .nav-link {
+    color: #333;
+}
+
+
+/* Dropdown Menu */
+.navbar-nav .dropdown-menu {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease;
+}
+
+.navbar-nav .dropdown-item {
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-nav .dropdown-item:hover {
+    background-color: #007bff;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/* Form Inline */
+.form-inline .form-control {
+    width: 200px;
+    transition: width 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 50px;
+}
+
+.form-inline .form-control:focus {
+    width: 250px;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+.form-inline .btn-outline-success {
+    color: #28a745;
+    border-color: #28a745;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.form-inline .btn-outline-success:hover {
+    background-color: #28a745;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(40, 167, 69, 0.2);
+}
+
+/* Log In and Sign Up Buttons */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    border-radius: 50px;
+
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+    transform: translateY(-3px);
+}
+
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    box-shadow: 0 0 8px rgba(40, 167, 69, 0.5);
+    transform: translateY(-3px);
+}
+
+/* Navbar Toggler */
+.navbar-toggler {
+    border-color: rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.navbar-toggler:hover {
+    transform: rotate(90deg);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Footer Styling */
+.footer {
+    background-color: #2c3e50;
+    padding: 50px 0;
+    color: #ecf0f1;
+    font-family: 'Helvetica Neue', sans-serif;
+    margin-top: 40px;
+}
+
+.footer h5 {
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+    color: #ecf0f1;
+    font-weight: bold;
+}
+
+.footer p,
+.footer ul {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #bdc3c7;
+}
+
+.footer ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.footer ul li {
+    margin-bottom: 12px;
+}
+
+.footer ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer ul li a:hover {
+    color: #3498db;
+    text-decoration: underline;
+}
+
+.footer .social-links li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.footer .social-links li a {
+    color: #ecf0f1;
+    font-size: 1.4rem;
+    transition: color 0.3s ease;
+}
+
+.footer .social-links li a:hover {
+    color: #3498db;
+}
+
+/* Footer Bottom Text */
+.footer-bottom {
+    background-color: #1a252f;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #7f8c8d;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+/* Footer Integration Enhancements */
+.footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer .col-md-4 {
+    flex: 1;
+    min-width: 220px;
+    margin-bottom: 30px;
+}
+
+/* Responsive Behavior */
+@media (max-width: 992px) {
+    .form-inline {
+        display: none;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 8px 10px;
+    }
+
+    .navbar-nav .dropdown-item {
+        padding: 8px 10px;
+    }
+}
