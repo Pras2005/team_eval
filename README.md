@@ -1,110 +1,65 @@
-# team_eval
+# Career Mate (Team Eval)
 
-## Table of Contents
+A Django-based web application skeleton aimed at evaluating user skills and career interests. Currently, the repository serves as the foundation for a larger project, focusing primarily on customized user authentication and session management.
 
-- [Deep Dive Description](#deep-dive-description)
-- [Project Structure](#project-structure)
-- [Prerequisites](#prerequisites)
-- [Installation & Setup](#installation--setup)
-- [Usage / Running Locally](#usage--running-locally)
+## Core Features & Architecture
 
-## Deep Dive Description
-
-team_eval is a robust software engineering project carefully architected to provide scalable and efficient functionality. Built primarily in Python, this repository likely leverages modern frameworks to deliver high-performance backend processing, data analysis, or scripting utilities. The data architecture is defined using structured models and schemas, allowing for clean data validation and database ORM interactions. The application entry point orchestrates the lifecycle and initializes the core services. 
-
-The core functionality involves processing inputs, managing state or data persistence, and delivering outputs or serving API endpoints as dictated by the specific modular implementations found within the file tree. By breaking down the logic into distinct modules, the system ensures that each component handles a single responsibility, paving the way for easier testing and future feature expansions.
-
-## Project Structure
-
-```text
-team_eval/
-├── README.md
-├── career_mate
-│   ├── career_mate
-│   │   ├── __init__.py
-│   │   ├── asgi.py
-│   │   ├── settings.py
-│   │   ├── urls.py
-│   │   └── wsgi.py
-│   ├── db.sqlite3
-│   ├── intrest_eval
-│   │   ├── __init__.py
-│   │   ├── admin.py
-│   │   ├── apps.py
-│   │   ├── migrations
-│   │   │   └── __init__.py
-│   │   ├── models.py
-│   │   ├── tests.py
-│   │   └── views.py
-│   ├── manage.py
-│   ├── skill_eval
-│   │   ├── __init__.py
-│   │   ├── admin.py
-│   │   ├── apps.py
-│   │   ├── migrations
-│   │   │   └── __init__.py
-│   │   ├── models.py
-│   │   ├── tests.py
-│   │   └── views.py
-│   ├── static
-│   │   ├── css
-│   │   │   └── 2.txt
-│   │   ├── images
-│   │   │   └── 3.txt
-│   │   └── js
-│   │       └── 4.txt
-│   ├── templates
-│   │   └── 1.txt
-│   └── user
-│       ├── __init__.py
-│       ├── admin.py
-│       ├── apps.py
-│       ├── migrations
-│       │   ├── 0001_initial.py
-│       │   └── __init__.py
-│       ├── models.py
-│       ├── tests.py
-│       └── views.py
-└── env
-    ├── Lib
-    │   └── site-packages
-... (truncated for brevity)
-```
+- **Custom Authentication (`user` app)**: 
+  - Implements a custom user model expanding the base Django `AbstractUser`.
+  - Secure password hashing and robust sign-up/login/logout workflows.
+  - Template-driven UI for authentication (Landing, Home, Signup, Login).
+- **Skill Evaluation (`skill_eval` app)**: Bootstrapped Django application intended for implementing tests and tracking technical proficiencies. (WIP)
+- **Interest Evaluation (`intrest_eval` app)**: Bootstrapped Django application meant for career interest matching and profiling. (WIP)
 
 ## Prerequisites
 
-Before you begin, ensure you have met the following requirements:
-- Python 3.8+
-- pip (Python package installer)
-- Virtualenv (recommended)
-- Git
+- **Python 3.10+**
+- **Django 5.1+**
+- **SQLite3** (Configured as default)
 
 ## Installation & Setup
 
-Follow these step-by-step instructions to get a development environment running:
-
-1. **Clone the repository:**
+1. **Clone the repository**:
    ```bash
-   git clone git@github.com:Pras2005/team_eval.git
-   cd team_eval
+   git clone <repo-url>
+   cd team_eval/career_mate
    ```
-
-2. **Set up a virtual environment:**
+2. **Setup virtual environment**:
    ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   python -m venv env
+   source env/bin/activate
+   # Note: A pre-existing 'env' folder is committed to the repo, it is recommended to create a fresh one for your architecture.
    ```
-
-4. **Environment Variables:**
-   If there is a `.env.example` file, copy it to `.env` and configure the necessary keys:
+3. **Install Dependencies**:
    ```bash
-   cp .env.example .env
+   pip install django
+   ```
+4. **Run Database Migrations**:
+   ```bash
+   python manage.py makemigrations
+   python manage.py migrate
    ```
 
 ## Usage / Running Locally
 
-Start the application by running the main entry script:
+To launch the development server, run:
 ```bash
-python main.py
+python manage.py runserver
 ```
-*(If the entry point is different, replace `main.py` with the appropriate script like `app.py` or run via Uvicorn/Flask)*
+
+Navigate to `http://127.0.0.1:8000/` to access the landing page.
+
+## Project Structure
+
+```text
+.
+├── career_mate/           # Main project directory (settings, urls)
+├── user/                  # Custom authentication application
+│   ├── views.py           # Login/Signup routing
+│   └── models.py          # Custom User definition
+├── skill_eval/            # Application for technical assessments (scaffold)
+├── intrest_eval/          # Application for career interest matching (scaffold)
+├── templates/             # HTML files (landing.html, login.html, etc.)
+├── static/                # CSS/JS Assets
+└── manage.py              # Django execution entry point
+```
